@@ -1,81 +1,71 @@
-# Road scene segmentation and Distance estimation
+# Road Scene Recognition for Blind People
 
-This project depends on YOLO model for segementation and monodepth2 model for distance estimation.This code work on python >= 3.7X. before run the code, you should install the dependencies libraries.
+A computer vision system that combines YOLO segmentation with Monodepth2 distance estimation to assist visually impaired individuals in understanding road scenes. This project runs on Python 3.7 and above.
 
-# Demo
-[![Watch the video]](output/IMG_1546.MOV)
-[(output/IMG_1508.jpg)]
+## Demo
+[![Demo Video](output/IMG_1508.jpg)](output/IMG_1546.MOV)
 
 ## ⚙️ Setup
+
+Install the required dependencies using pip:
 
 ```shell
 pip install torch==1.8.0
 pip install torchvision==0.9.0
 pip install ultralytics
-pip install opencv-contrib-python   
-pip install numpy 
+pip install opencv-contrib-python
+pip install numpy
 pip install Pillow
-
 ```
-or run the command to download the required libraries: 
+
+Alternatively, install all dependencies at once using:
 
 ```shell
- pip install -r  requirements.txt                               
+pip install -r requirements.txt
 ```
 
+## 🖼️ Prediction
 
-<!-- We recommend using a [conda environment](https://conda.io/docs/user-guide/tasks/manage-environments.html) to avoid dependency conflicts.
-
-We also recommend using `pillow-simd` instead of `pillow` for faster image preprocessing in the dataloaders. -->
-
-
-## 🖼️ Prediction for  a single image or directory path or video
-
-You can predict using this command:
+The system can process a single image, multiple images from a directory, or video input. Use the following command:
 
 ```shell
-python test.py --input_path assets/IMG_1533.jpg --output_path ./output --segmentation_data our
-                            *./images_folder/images 
-                            * assets/video.mp4                                
+python test.py --input_path <path> --output_path <path> --segmentation_data <dataset>
 ```
 
+### Arguments
 
+| Parameter | Description | Type | Options |
+|-----------|-------------|------|----------|
+| `--input_path` | Input file or directory path | string | - Single image: `image.jpg`<br>- Image directory: `./images_folder/images`<br>- Video file: `video.mp4` |
+| `--output_path` | Output directory for results | string | e.g., `./save_out/output` |
+| `--segmentation_data` | Dataset used for segmentation | string | `our` or `mapillary` |
 
-## Arguments
-| source              | value                                          | type                   |
-|---------------------|----------------------------------------------- |------------------------|
-|  --input_path       | image.jpg , ./images_folder/images , video.mp4 | string                 |
-| --output_path       | ./save_out/output                              | string                 |
-| --segmentation_data | options=['our','mapillary']                    |     -                  |
+## Segmentation Datasets
 
-## Segementation Data
-for this project, segementation model is trained on different dataset and different classes.
+The project supports two different segmentation datasets with distinct class sets:
 
-1. Mapillary dataset classes: 
-    'Road', 
-    'Lane Marking - Crosswalk', 
-    'Sidewalk',
-    'Obstacle',
-    'Car',
-    'Person',
-    'Traffic Light-Street', 
-    'Bike Lane',
-    'Bicycle',
-    'Traffic Light-Sidewalk',
-    'Pedestrian Area'
+### 1. Mapillary Dataset Classes
+- Road
+- Lane Marking - Crosswalk
+- Sidewalk
+- Obstacle
+- Car
+- Person
+- Traffic Light-Street
+- Bike Lane
+- Bicycle
+- Traffic Light-Sidewalk
+- Pedestrian Area
 
-2. our dataset: 
-    'Bike',
-    'Bikelane',
-    'Car',  
-    'Crosswalk', 
-    'E-Scooter',
-    'Obstacle', 
-    'Person', 
-    'Road', 
-    'Sidewalk', 
-    'Stairs', 
-    'Traffic Light'
-
-
-
+### 2. Our Dataset Classes
+- Bike
+- Bikelane
+- Car
+- Crosswalk
+- E-Scooter
+- Obstacle
+- Person
+- Road
+- Sidewalk
+- Stairs
+- Traffic Light
