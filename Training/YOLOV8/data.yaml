@@ -1,0 +1,26 @@
+# train: /home/chiron/Desktop/Osama/Own_data/Data_train  # train images (relative to 'path') 4 images
+# val: /home/chiron/Desktop/Osama/Own_data/Data_val  # val images (relative to 'path') 4 images
+
+train: /home/chiron/Desktop/Osama/training/images  # train images (relative to 'path') 4 images
+val: /home/chiron/Desktop/Osama/validation/images  # val images (relative to 'path') 4 images
+
+nc: 11
+#
+names: ['Road', 'Lane Marking - Crosswalk', 
+        'Sidewalk', 'Car','Obstacle',
+        'Person', 'Traffic Light-Street', 
+        'Bike Lane', 
+        'Bicycle', 'Traffic Light-Sidewalk', 
+        'Pedestrian Area']
+
+# names: ['Bike',
+#         'Bikelane',
+#         'Car',
+#         'Crosswalk',
+#         'E-Scooter',
+#         'Obstacle',
+#         'Person',
+#         'Road',
+#         'Sidewalk',
+#         'Stairs',
+#         'Traffic Light']
