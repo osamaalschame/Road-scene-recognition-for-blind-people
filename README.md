@@ -17,6 +17,10 @@ pip install opencv-contrib-python
 pip install numpy
 pip install Pillow
 ```
+1. Clone the repository to Monodepth2 folder :
+```bash
+git https://github.com/nianticlabs/monodepth2.git
+```
 
 Alternatively, install all dependencies at once using:
 
