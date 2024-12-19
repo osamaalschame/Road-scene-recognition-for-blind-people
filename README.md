@@ -2,8 +2,6 @@
 
 A computer vision system that combines YOLO segmentation with Monodepth2 distance estimation to assist visually impaired individuals in understanding road scenes. This project runs on Python 3.7 and above.
 
-## Demo
-[![Demo Video](output/IMG_1508.jpg)](output/IMG_1546.MOV)
 
 ## ⚙️ Setup
 
